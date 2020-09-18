@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <span id="file-path"></span>
+        <span>
+            <span class="page-info">
+                Page&nbsp; 
+                <!-- <span id="page-num"></span> -->
+                <input type="number" name="current_page" id="current_page" class="current_page" min="1" title="Enter page number and press ENTER!!"> 
+                of&nbsp; <span id="page-count"></span>
+            </span> &nbsp;&nbsp;
+        </span>
+        <button class="btn" id="prev-page">
+            <i class="fas fa-arrow-circle-left"></i> &nbsp;Prev Page
+        </button>
+        <button class="btn" id="next-page">
+            Next Page &nbsp;<i class="fas fa-arrow-circle-right"></i>
+        </button>
+    </div>
+    
+    <canvas id="pdf-render"></canvas>
+
+    <div class="scale" id="scale">
+        <div class="scale-up"  id="zoomIn">
+            <i class="fas fa-plus-circle" title="Zoom in by 0.5"></i>
+        </div><hr>  
+        <div class="scale-down"  id="zoomOut">
+            <i class="fas fa-minus-circle" title="Zoom out by 0.5"></i>
+        </div>
+    </div>
+
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
